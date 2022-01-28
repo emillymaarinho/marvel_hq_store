@@ -1,41 +1,20 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom'
-import home from '../../assest/home (1).png';
-import buy from '../../assest/compras.png';
-import logo from '../../assest/logo_.png';
+import { Nav, Logo, Icon } from './Layout.styled';
+import { Link } from 'react-router-dom';
+import home from '../../assets/home (1).png';
+import buy from '../../assets/compras.png';
+import logo from '../../assets/logo_.png';
 
-const Nav = styled.nav`
-    background: #fff;
-    display: flex;
-    justify-content: space-between;
-    position: fixed;
-    width: 100%;
-`
-
-const Logo = styled.img`
-    width: 160px;
-`
-
-const Icon = styled.img`
-    height: 30px;
-    width: 30px;
-    text-decoration: none;
-    margin: 20px;
-    cursor: pointer;  
-
-`
-
-const NavBar = (props) => {
+const NavBar = () => {
     return (
         <>
             <Nav>
                 <div>
-                    <Link to="/products" >
+                    <Link to="/" >
                         <Logo src={logo} alt="marvel" />
                     </Link>
                 </div>
                 <div>
-                    <Link to="/buy" >
+                    <Link to="/" >
                         <Icon src={home} alt="home" />
                     </Link>
                     <Link to="/buy">
