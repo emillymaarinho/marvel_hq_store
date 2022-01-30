@@ -28,7 +28,7 @@ const Home = () => {
     <Container>
       {comics.length > 0 && comics.map((comic, index) => (
         <ComicCard title={comic.title} image={comic.image} id={comic.id} key={comic.id}
-          price={comic.prices && comic.prices.length > 0 && comic.prices[0].price > 0 ? 'R$ ' + comic.prices[0].price : 'Grátis' }
+          price={comic.prices && comic.prices.length > 0 && comic.prices[0].price > 0 ? comic.prices[0].price : 0}
           onClick={() => onClickComic(comic.id, index)} />
       ))};
     </Container>

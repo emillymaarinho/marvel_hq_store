@@ -103,7 +103,7 @@ export const CardSelect = styled.div`
     width: 400px;
     margin-left: auto;
     margin-right: auto;
-    height: 600px;
+    height: 650px;
     margin-bottom: 30px;
     text-align: center;
     `

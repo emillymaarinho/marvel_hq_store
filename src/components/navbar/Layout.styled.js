@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Nav = styled.nav`
-     background: #fff;
+    background: #fff;
     display: flex;
     justify-content: space-between;
     position: fixed;
@@ -19,7 +19,21 @@ export const Icon = styled.img`
     height: 30px;
     width: 30px;
     text-decoration: none;
-    margin: 20px;
+    margin: 20px 12px 0px 20px;
     cursor: pointer;  
+`
+
+export const Span = styled.span`
+    background: #F21B2D;
+    padding-top: 5px;
+    padding-right: 6px;
+    padding-bottom: 5px;
+    padding-left: 6px;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    margin-left: -20px;
+    margin-right: 10px;
 `
 
