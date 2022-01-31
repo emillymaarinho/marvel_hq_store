@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
-import { Button, ComicInfo, Content, Image, QuantityContainer, Table, Title, Value } from '../../pages/ShoppingCart.styled';
+import { Total, ButtonBuy, ComicInfo, Button, Content, Image, QuantityContainer, Table, Title, Value } from './TableCart.styled';
 import CartQuantity from '../cartQuantity/CartQuantity';
 import defaultImg from '../../assets/comic.png';
 
@@ -19,38 +19,61 @@ const TableCart = () => {
 
     const getComicValue = (item) => {
         if (!item.price || item.price === 0.0) {
-            return 'Grátis'
-        } const price = item.qnt ? parseInt(item.qnt) * parseFloat(item.price) : item.price
-        return price.toFixed(2)
+            return 'Free';
+        } const price = item.qnt ? parseInt(item.qnt) * parseFloat(item.price) : item.price;
+        return '$ ' + price.toFixed(2);
+    }
+
+    const totalOfPrice = () => {
+        let total = 0;
+        for (let item of cart) {
+            total += item.price * item.qnt;
+        }
+        return total.toFixed(2);;
+    }
+
+    const totalOfProducts = () => {
+        let products = 0;
+        for (let item of cart) {
+            products += item.qnt;
+        }
+        return products;
     }
 
     return (
-        <Table>
-            <thead>
-                <tr>
-                    <th>Item</th>
-                    <th>Quantidade</th>
-                    <th>Preço</th>
-                </tr>
-            </thead>
-            <tbody>
-                {cart.length > 0 && cart.map((item, index) => (
-                    <Content key={index}>
-                        <td>
-                            <ComicInfo>
-                                <Image src={item.image || defaultImg}></Image>
-                                <Title>{item.title}</Title>
-                            </ComicInfo>
-                        </td>
-                        <QuantityContainer>
-                            <CartQuantity index={index} qnt={item.qnt || 1} onChangeQuantity={onChangeQuantity} />
-                            <Button onClick={() => removeComic(index)}>remover</Button>
-                        </QuantityContainer>
-                        <Value>{getComicValue(item)}</Value>
-                    </Content>
-                ))}
-            </tbody>
-        </Table>
+        <div>
+            <Table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {cart.length > 0 && cart.map((item, index) => (
+                        <Content key={index}>
+                            <td>
+                                <ComicInfo>
+                                    <Image src={item.image || defaultImg}></Image>
+                                    <Title>{item.title}</Title>
+                                </ComicInfo>
+                            </td>
+                            <QuantityContainer>
+                                <CartQuantity index={index} qnt={item.qnt || 1} onChangeQuantity={onChangeQuantity} />
+                                <Button onClick={() => removeComic(index)}>remove</Button>
+                            </QuantityContainer>
+                            <Value>{getComicValue(item)}</Value>
+                        </Content>
+                    ))}
+                </tbody>
+            </Table>
+            <Total>
+                <span>products: {totalOfProducts()}</span>
+                <span>total: $ {totalOfPrice()}</span>
+                <ButtonBuy >BUY</ButtonBuy>
+            </Total>
+        </div>
     );
 };
 

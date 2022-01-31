@@ -25,9 +25,9 @@ export const Icon = styled.img`
 
 export const Span = styled.span`
     background: #F21B2D;
-    padding-top: 5px;
+    padding-top: 3px;
     padding-right: 6px;
-    padding-bottom: 5px;
+    padding-bottom: 3px;
     padding-left: 6px;
     font-size: 14px;
     color: white;

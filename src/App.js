@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Comic from './pages/Comic';
 import ShoppingCart from './pages/ShoppingCart';
 import { CartProvaider } from './context/CartContext';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
           </PublicRoute>
         </Switch>
       </Router>
+      <Toaster />
     </CartProvaider>
   );
 };

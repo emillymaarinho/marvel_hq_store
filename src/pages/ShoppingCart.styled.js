@@ -16,48 +16,6 @@ export const MyCart = styled.h1`
     text-align: center;
     font-size: 25px;
 `
-export const Content = styled.tr`
-    text-align: center;
-`
-
-export const Table = styled.table`
-    border-collapse: collapse;
-    width: 100%;
-  `
-
-export const Value = styled.td` 
-text-align: center;
-`
-
-export const ComicInfo = styled.div`
-    display: flex;
-    align-items: center;
-    margin-left: 10%;
-    width: 300px;
-}
-`
-
-export const Image = styled.img`
-    width: 100px;
-    height: 100px;
-    margin-top: 10px;
-`
-
-export const Title = styled.span`
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 200px;
-`
-export const QuantityContainer = styled.td`
-   width: 250px;
-`
-
-export const Button = styled.button`
-    border:none;
-    background-color: #fff;
-    cursor: pointer;  
-`
 
 export const Centered = styled.div`
     text-align: center;    

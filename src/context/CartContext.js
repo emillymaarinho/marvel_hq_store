@@ -7,8 +7,14 @@ export const CartProvaider = ({ children }) => {
     const [cart, setCart] = useState(cartCached || []);
 
     const addComicToCart = (comic) => {
-        setCart([...cart, comic]);
-        localStorage.setItem("cart", JSON.stringify([...cart, comic]));
+        let index = cart.findIndex(val => val.id === comic.id);
+        if (index < 0) {
+            setCart([...cart, comic]);
+            localStorage.setItem("cart", JSON.stringify([...cart, comic]));
+        } else {
+            cart[index].qnt += 1;
+            updateCartItem(index, cart[index]);
+        }
     }
 
     const updateCartItem = (index, value) => {

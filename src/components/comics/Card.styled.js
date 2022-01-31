@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Card = styled.div`
     background-color: #fff;
+    border-radius: 10px;
     padding: 1em;
     margin: 0.5%;
     transition: transform .5s;
@@ -18,6 +19,7 @@ export const Image = styled.img`
     margin-right: auto;
     cursor: pointer;
     margin-bottom: 20px;
+    object-fit: contain;
     `
 
 export const Title = styled.h1`
@@ -84,28 +86,35 @@ export const Container = styled.div`
         width: 800px;  
     }
 
-    @media (max-width: 800px) {   
-        width: 650px;
-        grid-auto-rows: minmax(200px, auto);
-        grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+    @media (max-width: 870px) {   
+        width: 750px;
+        grid-auto-rows: minmax(230px, auto);
+        grid-template-columns: repeat(auto-fit, minmax(230px, 230px));
     }
 
-    @media (max-width: 690px) { 
-        width: 550px;
-        grid-auto-rows: minmax(150px, auto);
-        grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
-    }`
+    @media (max-width: 750px) { 
+        width: 650px;
+        grid-auto-rows: minmax(200px, auto);
+        grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+    }
+    @media (max-width: 650px) { 
+        width: 500px;
+    }
+    `
+
 
 export const CardSelect = styled.div`
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #fff;
+    border-radius: 10px;
     padding: 20px 20px;
     align-items: flex-start;
-    width: 400px;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
-    height: 650px;
+    height: 550px;
     margin-bottom: 30px;
     text-align: center;
+    
     `
 export const TitleCardSelect = styled.h1`
     background-color: #202020;
@@ -114,16 +123,18 @@ export const TitleCardSelect = styled.h1`
     margin-bottom: .5em;
     font-size: 18px;
     text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 400px;
     `
 
 export const ImageCardSelect = styled.img`  
     height: 400px;
-    width: 400px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 40px;
+    width: 400px;   
+    margin-top: 20px;
     margin-bottom: 20px;
+    object-fit: contain;
 `
 export const PriceCardSelect = styled.span`
     font-weight: bold;
@@ -143,6 +154,41 @@ export const Button = styled.button`
     padding: 15px;
     font-size: 18px;
     font-weight: bold;
+    border-radius: 40px;
+
+    :hover {
+        transform: scale(1.1);
+        transition: all 0.5s;
+      } 
+`
+
+export const TitleAndImg = styled.div`
+    display: flex;
+    flex-direction: column;
+
+`
+
+export const TwoDisplay = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin: auto; 
+    text-align: center;
+
+`
+export const Description = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 40px;
+`
+
+
+export const NoDescription = styled.span`
+    font-size: 15px;
+    color: #808080;
+`
+
+export const OneDisplay = styled.div`
+    display: flex;
 `
 
 
