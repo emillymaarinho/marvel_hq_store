@@ -7,7 +7,7 @@ const CartQuantity = ({ index, onChangeQuantity, qnt }) => {
     }
 
     const removeItem = () => {
-        if (qnt > 0) {
+        if (qnt > 1) {
             onChangeQuantity(qnt - 1, index);
         };
     };

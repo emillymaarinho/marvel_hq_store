@@ -4,7 +4,7 @@ import { CartContext } from "../context/CartContext";
 import defaultImg from '../assets/comic.png';
 import {
     CardSelect, ImageCardSelect, Button, ButtonCentered,
-    TitleCardSelect, PriceCardSelect, TitleAndImg, Description, OneDisplay, TwoDisplay, NoDescription
+    TitleCardSelect, PriceCardSelect, TitleAndImg, Description, Display, NoDescription
 } from '../components/comics/Card.styled';
 
 
@@ -27,12 +27,12 @@ const Comic = () => {
     return (
         <div >
             <CardSelect >
-                <OneDisplay>
+                <Display>
                     <TitleAndImg>
                         <TitleCardSelect title={comic.title}>{comic.title}</TitleCardSelect>
                         <ImageCardSelect src={comic.image || defaultImg} ></ImageCardSelect>
                     </TitleAndImg>
-                    <TwoDisplay>
+                    <div>
                         <Description >
                             <span >{comic.description ? comic.description
                                 : <NoDescription>No description</NoDescription>}</span>
@@ -41,8 +41,8 @@ const Comic = () => {
                         <PriceCardSelect>
                             $ {comic.prices && comic.prices.length > 0 && comic.prices[0].price > 0 ? comic.prices[0].price : 0.0}
                         </PriceCardSelect>
-                    </TwoDisplay>
-                </OneDisplay>
+                    </div>
+                </Display>
                 <ButtonCentered >
                     <Button onClick={addToCart} >ADD TO CART</Button>
                 </ButtonCentered>

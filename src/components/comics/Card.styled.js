@@ -4,7 +4,6 @@ export const Card = styled.div`
     background-color: #fff;
     border-radius: 10px;
     padding: 1em;
-    margin: 0.5%;
     transition: transform .5s;
     transform: translateX(0) scale(.9);
     &:hover { transform: translateX(8px) scale(1) } ;
@@ -12,8 +11,8 @@ export const Card = styled.div`
     `
 
 export const Image = styled.img`
-    height: 200px;
-    width: 200px;
+    height: 100%;
+    width: 100%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -57,15 +56,14 @@ export const Container = styled.div`
     display: grid;
     grid-auto-rows: minmax(290px, auto);
     grid-gap: 20px;
-    grid-auto-flow: dense;
-    padding: 0px;
-    
-    margin-left: 50px;
+    grid-auto-flow: dense; 
+    margin-left: auto;
+    margin-right: auto;
     transition: all 0.5s;
 
     grid-template-columns: repeat(auto-fit, minmax(290px, 290px));
     justify-content: center;
-    width: 2500px;
+    width: 100%;
     max-width: 2500px;
 
     @media (max-width: 2200px) {
@@ -102,7 +100,6 @@ export const Container = styled.div`
     }
     `
 
-
 export const CardSelect = styled.div`
     background-color: #fff;
     border-radius: 10px;
@@ -111,9 +108,13 @@ export const CardSelect = styled.div`
     width: 50%;
     margin-left: auto;
     margin-right: auto;
-    height: 550px;
+    height: auto;
     margin-bottom: 30px;
     text-align: center;
+
+    @media (max-width: 2200px) {
+        width: 65%;
+    }   
     
     `
 export const TitleCardSelect = styled.h1`
@@ -126,20 +127,64 @@ export const TitleCardSelect = styled.h1`
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 400px;
+    width: 70%;
+
+    @media (max-width: 2200px) {
+        font-size: 30px;
+    }
+
+    @media (max-width: 1580px) {
+        font-size: 20px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 15px;
+    }
     `
 
 export const ImageCardSelect = styled.img`  
-    height: 400px;
-    width: 400px;   
+    height: 50%;
+    width: 50%;   
     margin-top: 20px;
     margin-bottom: 20px;
     object-fit: contain;
 `
+
+export const Description = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 40px;
+
+    @media (max-width: 2200px) {
+        font-size: 30px;
+    }
+
+    @media (max-width: 1580px) {
+        font-size: 15px;
+        padding-bottom: 30px;
+    }
+
+    @media (max-width: 1024px) {
+        font-size: 15px;
+    }
+`
+
 export const PriceCardSelect = styled.span`
     font-weight: bold;
     font-size: 25px;
     color: #202020;
+
+    @media (max-width: 2200px) {
+        font-size: 35px;
+    }
+
+    @media (max-width: 1580px) {
+        font-size: 25px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 20px;
+    }
 `
 
 export const ButtonCentered = styled.div`
@@ -160,35 +205,33 @@ export const Button = styled.button`
         transform: scale(1.1);
         transition: all 0.5s;
       } 
+
+    @media (max-width: 2200px) {
+        font-size: 30px;
+    }
+
+    @media (max-width: 1580px) {
+        font-size: 15px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 12px;
+    }
 `
 
 export const TitleAndImg = styled.div`
     display: flex;
     flex-direction: column;
-
+    align-items: center;
 `
-
-export const TwoDisplay = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin: auto; 
-    text-align: center;
-
-`
-export const Description = styled.div`
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 40px;
-`
-
 
 export const NoDescription = styled.span`
     font-size: 15px;
     color: #808080;
 `
 
-export const OneDisplay = styled.div`
-    display: flex;
+export const Display = styled.div`
+    display: column;   
 `
 
 

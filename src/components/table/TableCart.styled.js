@@ -4,7 +4,6 @@ import styled from "styled-components";
 export const ComicInfo = styled.div`
     display: flex;
     align-items: center;
-    margin-left: 10%;
     width: 300px;
 `
 export const Button = styled.button`
@@ -45,7 +44,7 @@ export const Title = styled.span`
     width: 200px;
 `
 export const QuantityContainer = styled.td`
-   width: 250px;
+   width: 200px;
 `
 
 export const Total = styled.div`

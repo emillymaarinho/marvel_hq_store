@@ -29,7 +29,7 @@ const TableCart = () => {
         for (let item of cart) {
             total += item.price * item.qnt;
         }
-        return total.toFixed(2);;
+        return total.toFixed(2);
     }
 
     const totalOfProducts = () => {

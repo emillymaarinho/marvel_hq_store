@@ -8,7 +8,6 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
-    height: 400px;
     padding: 15px 0 20px 0;
 `
 export const MyCart = styled.h1`
