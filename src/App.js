@@ -11,7 +11,7 @@ function App() {
 
   return (
     <CartProvaider>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL} >
         <NavBar />
         <Switch>
           <PublicRoute exact path="/" >

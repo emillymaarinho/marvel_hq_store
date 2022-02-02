@@ -4,23 +4,28 @@ import { getAllComics } from "../services/comics.services";
 import { Container } from "../components/comics/Card.styled";
 import ComicCard from '../components/comics/ComicCard';
 import Pages from "../components/pagination/Pages";
+import Loading from '../components/loading/Loading';
 
 const PAGE_SIZE = 20;
 
 const Home = () => {
 
   const [comics, setComics] = useState([]);
+  const [loading, setLoading] = useState(true);
   const history = useHistory();
 
   const [itensPerPage] = useState(PAGE_SIZE);
   const [currentPage, setCurrentPage] = useState(1);
-  const pages = Math.ceil(50920 / itensPerPage);
+  const [totalItems, setTotalItems] = useState(0);
 
 
   useEffect(() => {
-    const getComics = () => {
-      const result = getAllComics();
-      setComics(result[currentPage].data.results);
+    const getComics = async () => {
+      setLoading(true)
+      const result = await getAllComics(currentPage, PAGE_SIZE);
+      setTotalItems(result.data.total);
+      setComics(result.data.results);
+      setLoading(false);
     }
     getComics();
   }, [currentPage]);
@@ -34,24 +39,37 @@ const Home = () => {
 
   const handlePageChange = (event, value) => {
     setCurrentPage(value)
-  }
+    window.scrollTo(0, 0);
+  };
+
+  const getComicImagePath = (comic) => {
+    if (comic.thumbnail && comic.thumbnail.path) {
+      return `${comic.thumbnail.path}.${comic.thumbnail.extension}`
+    };
+  };
 
   return (
     <div>
-      <div style={{
-        display: 'flex',
-        textAlign: 'center',
-        alignItems: 'center'
-      }}>
-        <Container>
-          {comics.length > 0 && comics.map((comic, index) => (
-            <ComicCard title={comic.title} image={comic.image} id={comic.id} key={comic.id}
-              price={comic.prices && comic.prices.length > 0 && comic.prices[0].price > 0 ? comic.prices[0].price : 0}
-              onClick={() => onClickComic(comic.id, index)} />
-          ))}
-        </Container>
-      </div>
-      <Pages currentPage={currentPage} pages={pages} changePage={handlePageChange} />
+      {loading ? <Loading /> :
+        <>
+          <div style={{
+            display: 'flex',
+            textAlign: 'center',
+            alignItems: 'center'
+          }}>
+            <Container>
+              {comics.length > 0 && comics.map((comic, index) => (
+                <ComicCard
+                  title={comic.title}
+                  image={getComicImagePath(comic)}
+                  id={comic.id} key={comic.id}
+                  price={comic.prices && comic.prices.length > 0 && comic.prices[0].price > 0 ? comic.prices[0].price : 0}
+                  onClick={() => onClickComic(comic.id, index)} />
+              ))}
+            </Container>
+          </div>
+          <Pages currentPage={currentPage} pages={Math.ceil(totalItems / itensPerPage)} changePage={handlePageChange} />
+        </>}
     </div>
   );
 };

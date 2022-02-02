@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const QuantityContainer = styled.div`
-width: 100px;
+width: 150px;
 margin-left: auto;
 margin-right: auto;
 

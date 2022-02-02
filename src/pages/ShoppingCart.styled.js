@@ -1,14 +1,43 @@
 import styled from "styled-components";
 
+export const Cart = styled.div`
+    display: flex;
+    margin-left: 60px;
+   
+    @media (max-width: 1100px) {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-left: auto;
+    }
+    @media (max-width: 800px) {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+`
+
 export const Container = styled.div`
-    width: 55%;   
+    width: 100%;  
+    height: 450px; 
     margin: 0 auto;
     margin-top: 20px;
     background: #fff;
-    display: flex;
-    flex-direction: column;
     overflow-y: scroll;
     padding: 15px 0 20px 0;
+
+    @media (max-width: 800px) {
+        width: 80%;
+    }
+    @media (max-width: 510px) {
+        width: 65%;
+    }
+    @media (max-width: 430px) {
+        width: 55%;
+    }
+    @media (max-width: 320px) {
+        width: 40%;
+    }
 `
 export const MyCart = styled.h1`
     color: #fff;

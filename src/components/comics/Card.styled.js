@@ -11,7 +11,7 @@ export const Card = styled.div`
     `
 
 export const Image = styled.img`
-    height: 100%;
+    height: 300px;;
     width: 100%;
     display: block;
     margin-left: auto;
@@ -61,7 +61,7 @@ export const Container = styled.div`
     margin-right: auto;
     transition: all 0.5s;
 
-    grid-template-columns: repeat(auto-fit, minmax(290px, 290px));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
     justify-content: center;
     width: 100%;
     max-width: 2500px;
@@ -75,28 +75,29 @@ export const Container = styled.div`
     }
 
     @media (max-width: 1580px) {   
-        width: 1250px;
-        grid-auto-rows: minmax(250px, auto);
-        grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
+        width: 1300px;
+        
     }
 
     @media (max-width: 1024px) {
-        width: 800px;  
+        width: 1000px;  
     }
 
     @media (max-width: 870px) {   
-        width: 750px;
+        width: 800px;
         grid-auto-rows: minmax(230px, auto);
-        grid-template-columns: repeat(auto-fit, minmax(230px, 230px));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 230px));
     }
 
     @media (max-width: 750px) { 
         width: 650px;
         grid-auto-rows: minmax(200px, auto);
-        grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 200px));
     }
-    @media (max-width: 650px) { 
-        width: 500px;
+    @media (max-width: 560px) { 
+        width: 450px;
+        grid-auto-rows: minmax(200px, auto);
+        grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
     }
     `
 

@@ -4,7 +4,8 @@ import styled from "styled-components";
 export const ComicInfo = styled.div`
     display: flex;
     align-items: center;
-    width: 300px;
+    text-align: left;
+    
 `
 export const Button = styled.button`
     border:none;
@@ -23,10 +24,17 @@ export const Content = styled.tr`
 export const Table = styled.table`
     border-collapse: collapse;
     width: 100%;
+
+    @media (max-width: 1320px) {
+        flex-direction: column;
+        align-items: center;
+    }
+    
   `
 
 export const Value = styled.td` 
-text-align: center;
+    text-align: center;
+   
 `
 
 
@@ -41,33 +49,9 @@ export const Title = styled.span`
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 200px;
+    width: 300px;
 `
 export const QuantityContainer = styled.td`
-   width: 200px;
+   width: 100px;
 `
 
-export const Total = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-right: 20px;
-    text-align: right;
-`
-
-export const ButtonBuy = styled.button`
-    margin-top: 10px;
-    background-color: #F21B2D;
-    border: none;
-    cursor: pointer;
-    color: #fff;
-    padding: 5px 25px;
-    font-size: 15px;
-    font-weight: bold;
-    border-radius: 40px;
-    margin-left: auto;
-
-    :hover {
-        transform: scale(1.1);
-        transition: all 0.5s;
-      } 
-`
