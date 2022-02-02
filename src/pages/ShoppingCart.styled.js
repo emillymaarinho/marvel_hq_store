@@ -52,6 +52,8 @@ export const CartClear = styled.div`
     font-size: 15px;
     margin: auto; 
     text-align: center;
+    background: #fff;
+    width: 100%;
 `
 
 export const Icon = styled.img`

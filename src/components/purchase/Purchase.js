@@ -12,7 +12,7 @@ const Purchase = () => {
             total += item.price * item.qnt
         }
         return total.toFixed(2);
-    }
+    };
 
     const totalOfProducts = () => {
         let products = 0;
@@ -20,7 +20,7 @@ const Purchase = () => {
             products += item.qnt;
         }
         return products;
-    }
+    };
 
     return (
         <Container>
@@ -33,7 +33,7 @@ const Purchase = () => {
             </Total>
             <ButtonBuy >BUY</ButtonBuy>
         </Container>
-    )
-}
+    );
+};
 
 export default Purchase;
