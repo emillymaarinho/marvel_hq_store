@@ -1,10 +1,10 @@
-import { data } from "./data"
-import CryptoJS from "crypto-js"
+import { data } from "./data";
+import CryptoJS from "crypto-js";
 const ENV = 'production';
-const BASE_URL = 'https://gateway.marvel.com/v1/public/comics'
+const BASE_URL = 'https://gateway.marvel.com/v1/public/comics';
 
-const PUBLIC_KEY = process.env.REACT_APP_MARVEL_PUBLIC_KEY
-const PRIVATE_KEY = process.env.REACT_APP_MARVEL_PRIVATE_KEY
+const PUBLIC_KEY = process.env.REACT_APP_MARVEL_PUBLIC_KEY;
+const PRIVATE_KEY = process.env.REACT_APP_MARVEL_PRIVATE_KEY;
 
 const getAllComics = async (page, pageSize) => {
     if (ENV === 'development') {
@@ -14,7 +14,7 @@ const getAllComics = async (page, pageSize) => {
     const timeStamp = new Date().getTime();
     const md5Hash = CryptoJS.MD5(timeStamp + PRIVATE_KEY + PUBLIC_KEY);
 
-    let query = `?ts=${timeStamp}&apikey=${PUBLIC_KEY}&hash=${md5Hash}&offset=${offset}`
+    let query = `?ts=${timeStamp}&apikey=${PUBLIC_KEY}&hash=${md5Hash}&offset=${offset}`;
 
     const response = await fetch(`${BASE_URL}${query}`, {
         method: 'GET',
@@ -26,4 +26,4 @@ const getAllComics = async (page, pageSize) => {
 
 }
 
-export { getAllComics }
+export { getAllComics };

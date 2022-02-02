@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import { getAllComics } from "../services/comics.services";
-import { Container } from "../components/comics/Card.styled";
+import { Container } from "./Home.styled";
 import ComicCard from '../components/comics/ComicCard';
 import Pages from "../components/pagination/Pages";
 import Loading from '../components/loading/Loading';

@@ -19,7 +19,7 @@ export const Cart = styled.div`
 
 export const Container = styled.div`
     width: 100%;  
-    height: 450px; 
+    height: 70%; 
     margin: 0 auto;
     margin-top: 20px;
     background: #fff;
@@ -46,7 +46,7 @@ export const MyCart = styled.h1`
 `
 
 export const Centered = styled.div`
-    text-align: center;    
+    text-align: center; 
 `
 export const ButtonClear = styled.button`
     border:none;
