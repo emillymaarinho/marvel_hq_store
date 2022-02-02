@@ -22,21 +22,12 @@ export const Container = styled.div`
     height: 70%; 
     margin: 0 auto;
     margin-top: 20px;
-    background: #fff;
-    overflow-y: scroll;
     padding: 15px 0 20px 0;
+    display: flex;
+    flex-direction: column;
 
     @media (max-width: 800px) {
         width: 80%;
-    }
-    @media (max-width: 510px) {
-        width: 65%;
-    }
-    @media (max-width: 430px) {
-        width: 55%;
-    }
-    @media (max-width: 320px) {
-        width: 40%;
     }
 `
 export const MyCart = styled.h1`
@@ -67,5 +58,15 @@ export const Icon = styled.img`
     width: 65px;
     heigth: 55px;
 `
+export const TableContainer = styled.div`
+    overflow-y: scroll;
+    height: 400px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 
 
+    @media (min-height: 1000px) {
+        height: 1000px;
+    }
+`

@@ -4,8 +4,7 @@ import styled from "styled-components";
 export const ComicInfo = styled.div`
     display: flex;
     align-items: center;
-    text-align: left;
-    
+    justify-content: center;
 `
 export const Button = styled.button`
     border:none;
@@ -24,7 +23,8 @@ export const Content = styled.tr`
 export const Table = styled.table`
     border-collapse: collapse;
     width: 100%;
-
+    background: #fff;
+    
     @media (max-width: 1320px) {
         flex-direction: column;
         align-items: center;

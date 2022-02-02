@@ -24,27 +24,30 @@ export const Container = styled.div`
 
     @media (max-width: 1580px) {   
         width: 1300px;
-        
+    }
+
+    @media (max-width: 1189px) {   
+        width: 1000px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
     }
 
     @media (max-width: 1024px) {
-        width: 1000px;  
+        width: 800px;  
+        grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
     }
 
     @media (max-width: 870px) {   
-        width: 800px;
-        grid-auto-rows: minmax(230px, auto);
-        grid-template-columns: repeat(auto-fit, minmax(250px, 230px));
+        width: 650px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
     }
 
     @media (max-width: 750px) { 
-        width: 650px;
-        grid-auto-rows: minmax(200px, auto);
-        grid-template-columns: repeat(auto-fit, minmax(250px, 200px));
+        width: 550px;
+        grid-auto-rows: minmax(200px auto);
+        grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
     }
     @media (max-width: 560px) { 
-        width: 450px;
-        grid-auto-rows: minmax(200px, auto);
-        grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
+        width: 400px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
     }
     `

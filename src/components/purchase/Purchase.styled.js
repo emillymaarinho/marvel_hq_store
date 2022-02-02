@@ -5,10 +5,17 @@ export const Container = styled.div`
     background-color: #202020;
     border-radius: 5px;
     margin: 100px;
-    width: 300px;
+    width: 40%;
     display: flex;
     flex-direction: column; 
+    justify-content: space-around;
     border: 2px solid #fff;
+    height: 100%;
+    padding: 20px;
+
+    @media (max-width: 900px) {
+        width: 60%;
+    }
 `
 
 export const Summary = styled.div`
@@ -17,6 +24,7 @@ export const Summary = styled.div`
 `
 export const Total = styled.div`
     display: flex;
+    text-align: center;
     justify-content: space-around;
     font-size: 18px;
     color: #fff;

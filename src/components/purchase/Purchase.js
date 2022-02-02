@@ -28,8 +28,8 @@ const Purchase = () => {
                 <h2>Summary</h2>
             </Summary>
             <Total>
-                <span><strong>Products:</strong> {totalOfProducts()}</span>
-                <span><strong>Total:</strong> $ {totalOfPrice()}</span>
+                <span><strong>Products:</strong> <p>{totalOfProducts()}</p></span>
+                <span><strong>Total:</strong> <p>$ {totalOfPrice()}</p></span>
             </Total>
             <ButtonBuy >BUY</ButtonBuy>
         </Container>

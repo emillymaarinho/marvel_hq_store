@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../context/CartContext";
-import { ButtonClear, Centered, Cart, CartClear, Container, MyCart, Icon } from "./ShoppingCart.styled";
+import { ButtonClear, Centered, Cart, CartClear, Container, MyCart, Icon, TableContainer } from "./ShoppingCart.styled";
 import sad from '../assets/sad.png';
 import TableCart from "../components/table/TableCart";
 import Purchase from "../components/purchase/Purchase";
@@ -23,25 +23,22 @@ const ShoppingCart = () => {
 
     return (
         <Cart>
-            <content style={{ flex: 2 }}>
+            <Container>
                 <MyCart>My cart</MyCart>
-                <Container >
-                    {cartVisible ? <div>
-                        <TableCart />
-                    </div>
-                        : <CartClear>
-                            <h1>Empty cart!</h1>
-                            <Icon src={sad}></Icon>
-                        </CartClear>}
-                </Container>
+                {cartVisible ? <TableContainer>
+                    <TableCart />
+                </TableContainer>
+                    : <CartClear>
+                        <h1>Empty cart!</h1>
+                        <Icon src={sad}></Icon>
+                    </CartClear>}
                 {cartVisible ? <Centered>
                     <ButtonClear onClick={clear}>clear cart</ButtonClear>
                 </Centered>
                     : null}
-            </content>
-            <div style={{ flex: 1 }}>
-                <Purchase />
-            </div>
+            </Container>
+
+            <Purchase />
         </Cart>
     );
 };
