@@ -18,20 +18,21 @@ export const Cart = styled.div`
 `
 
 export const Container = styled.div`
-    width: 100%;  
+    width: 90%;  
     height: 70%; 
     margin: 0 auto;
     margin-top: 20px;
     padding: 15px 0 20px 0;
     display: flex;
     flex-direction: column;
+    background: #fff;
+    border-radius: 5px;
 
     @media (max-width: 800px) {
         width: 80%;
     }
 `
 export const MyCart = styled.h1`
-    color: #fff;
     text-align: center;
     font-size: 25px;
 `
@@ -41,7 +42,7 @@ export const Centered = styled.div`
 `
 export const ButtonClear = styled.button`
     border:none;
-    background-color: #202020;
+    background-color: #fff;
     cursor: pointer;  
     color: #F21B2D;
     font-size: 18px;
@@ -52,8 +53,7 @@ export const CartClear = styled.div`
     font-size: 15px;
     margin: auto; 
     text-align: center;
-    background: #fff;
-    width: 100%;
+        width: 100%;
 `
 
 export const Icon = styled.img`
@@ -61,12 +61,12 @@ export const Icon = styled.img`
     heigth: 55px;
 `
 export const TableContainer = styled.div`
-    overflow-y: scroll;
+    border: 1px solid #ccc  ;
+    overflow-y: auto;
     height: 400px;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-
 
     @media (min-height: 1000px) {
         height: 1000px;

@@ -7,6 +7,7 @@ import Pages from "../components/pagination/Pages";
 import Loading from '../components/loading/Loading';
 
 const PAGE_SIZE = 20;
+const RARE_INDEXES = [5, 8]
 
 const Home = () => {
 
@@ -18,11 +19,16 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalItems, setTotalItems] = useState(0);
 
-
   useEffect(() => {
     const getComics = async () => {
       setLoading(true)
+      let rares = RARE_INDEXES.map((index) => (index * currentPage) % 20);
+    
       const result = await getAllComics(currentPage, PAGE_SIZE);
+
+      result.data.results[rares[0]].rare = true;
+      result.data.results[rares[1]].rare = true;
+
       setTotalItems(result.data.total);
       setComics(result.data.results);
       setLoading(false);
@@ -60,6 +66,7 @@ const Home = () => {
             <Container>
               {comics.length > 0 && comics.map((comic, index) => (
                 <ComicCard
+                  rare={comic.rare}
                   title={comic.title}
                   image={getComicImagePath(comic)}
                   id={comic.id} key={comic.id}

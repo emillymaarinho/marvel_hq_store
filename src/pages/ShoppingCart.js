@@ -24,7 +24,7 @@ const ShoppingCart = () => {
     return (
         <Cart>
             <Container>
-                <MyCart>My cart</MyCart>
+                {cartVisible && <MyCart>My cart</MyCart>}
                 {cartVisible ? <TableContainer>
                     <TableCart />
                 </TableContainer>

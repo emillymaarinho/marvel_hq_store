@@ -1,11 +1,12 @@
-import { Card, Title, Image, IconCart, IconCentered, Price } from "./Card.styled";
+import { Card, Title, Image, IconCart, IconCentered, Price, ImgRare } from "./Card.styled";
 import { CartContext } from '../../context/CartContext'
 import { useContext } from 'react';
 import toast from 'react-hot-toast';
 import iconCart from '../../assets/add_carrinho.png';
+import comicRare from '../../assets/limited.png';
 
 
-const ComicCard = ({ id, image, title, onClick, price }) => {
+const ComicCard = ({ id, image, title, onClick, price, rare }) => {
 
     const { addComicToCart } = useContext(CartContext);
 
@@ -19,13 +20,12 @@ const ComicCard = ({ id, image, title, onClick, price }) => {
 
     return (
         <div >
-            <Card>
+            <Card rare={rare}>
                 <div onClick={onClick} >
+                    {rare ? <ImgRare src={comicRare} /> : null}
                     <Title>{title}</Title>
-                    <Image src={image} alt='imagem' onError={({ currentTarget }) => {
-                        currentTarget.onerror = null;
-                        currentTarget.src = "../../assets/comic.png";
-                    }} />
+                    <Image src={image} alt='imagem' />
+
                 </div>
                 <Price> {price ? `$ ${price}` : 'Free'} </Price>
                 <IconCentered>

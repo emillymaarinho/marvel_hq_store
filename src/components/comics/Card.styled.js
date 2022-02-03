@@ -8,6 +8,24 @@ export const Card = styled.div`
     transform: translateX(0) scale(.9);
     &:hover { transform: translateX(8px) scale(1) } ;
     &:focus { transform: translateX(8px) scale(1) } ;
+
+    ${({ rare }) => rare && `
+        :before, :after { content:""; display:block; box-sizing:border-box;
+        position:absolute;z-index:5; pointer-events: none; 
+        width:0; height:0; opacity:0; border:3px solid #daa520; border-radius: 10px; }
+
+        :before { border-left:none; border-bottom:none; left:0; top:0;
+        transition:width .5s linear 1.5s, height .5s linear 1s, opacity .1s 2s }
+        :after  { border-top:none; border-right:none; right:0; bottom:0;
+        transition:width .5s linear .5s, height .5s linear, opacity .1s 1s }
+
+        :hover::before, :hover::after  { width:100%; height:100%; opacity:1 }
+
+        :hover::before { transition:width .5s linear, height .5s linear .5s, opacity .1s }
+        :hover::after  { transition:width .5s linear 1s, height .5s linear 1.5s, opacity .1s 1s }
+    `}
+
+
     `
 
 export const Image = styled.img`
@@ -186,5 +204,12 @@ export const NoDescription = styled.span`
 export const Display = styled.div`
     display: column;   
 `
+export const ImgRare = styled.img`
+    widht: 70px;
+    height: 70px;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
 
+`
 
