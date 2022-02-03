@@ -18,6 +18,7 @@
   
   ## Rodando a aplicação
   Para rodar a aplicação é preciso dar o seguinte comando:
+  
  $ npm start
   
   ## Tecnologias utilizadas
