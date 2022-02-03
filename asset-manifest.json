@@ -1,18 +1,19 @@
 {
   "files": {
     "main.css": "/marvel_hq_store/static/css/main.71e003ac.css",
-    "main.js": "/marvel_hq_store/static/js/main.d509c471.js",
+    "main.js": "/marvel_hq_store/static/js/main.a954d995.js",
     "static/js/787.100a7847.chunk.js": "/marvel_hq_store/static/js/787.100a7847.chunk.js",
     "static/media/sad.png": "/marvel_hq_store/static/media/sad.b3791b9ab21ef0a572e7.png",
     "static/media/logo_.png": "/marvel_hq_store/static/media/logo_.006042307d732e152165.png",
     "static/media/add_carrinho.png": "/marvel_hq_store/static/media/add_carrinho.c7b21d42e6fe5ae2d758.png",
+    "static/media/limited.png": "/marvel_hq_store/static/media/limited.c00fbb55a36da42ce35b.png",
     "index.html": "/marvel_hq_store/index.html",
     "main.71e003ac.css.map": "/marvel_hq_store/static/css/main.71e003ac.css.map",
-    "main.d509c471.js.map": "/marvel_hq_store/static/js/main.d509c471.js.map",
+    "main.a954d995.js.map": "/marvel_hq_store/static/js/main.a954d995.js.map",
     "787.100a7847.chunk.js.map": "/marvel_hq_store/static/js/787.100a7847.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.71e003ac.css",
-    "static/js/main.d509c471.js"
+    "static/js/main.a954d995.js"
   ]
 }
